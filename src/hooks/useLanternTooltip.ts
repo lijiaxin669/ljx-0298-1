@@ -54,8 +54,14 @@ export const useLanternTooltip = (lanterns: LanternData[]) => {
   const { camera } = useThree();
   const gridRef = useRef<SpatialGrid | null>(null);
   const setNearestLantern = useGameStore((state) => state.setNearestLantern);
-  const playerPosition = useGameStore((state) => state.playerPosition);
+  const playerPositionRef = useRef([0, 1.7, 0]);
   const triggerDistance = config.tooltip.triggerDistance;
+
+  useEffect(() => {
+    return useGameStore.subscribe((state) => {
+      playerPositionRef.current = state.playerPosition;
+    });
+  }, []);
 
   useEffect(() => {
     const grid = new SpatialGrid(5);
@@ -66,8 +72,8 @@ export const useLanternTooltip = (lanterns: LanternData[]) => {
   const update = useCallback(() => {
     if (!gridRef.current) return;
 
-    const pos = playerPosition;
-    const nearby = gridRef.current.query(pos[0], pos[2], triggerDistance + 2);
+    const pos = playerPositionRef.current;
+    const nearby = gridRef.current.query(pos[0], pos[2], triggerDistance + 3);
 
     let nearest: LanternData | null = null;
     let minDist = Infinity;
@@ -79,18 +85,13 @@ export const useLanternTooltip = (lanterns: LanternData[]) => {
       const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
       if (dist < triggerDistance && dist < minDist) {
-        const lanternScreenPos = new THREE.Vector3(...lantern.position);
-        lanternScreenPos.project(camera);
-
-        if (lanternScreenPos.z < 1) {
-          minDist = dist;
-          nearest = lantern;
-        }
+        minDist = dist;
+        nearest = lantern;
       }
     }
 
     setNearestLantern(nearest);
-  }, [camera, playerPosition, triggerDistance, setNearestLantern]);
+  }, [camera, triggerDistance, setNearestLantern]);
 
   return { update };
 };

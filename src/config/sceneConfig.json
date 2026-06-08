@@ -1,12 +1,12 @@
 {
   "street": {
-    "length": 200,
+    "length": 300,
     "width": 8
   },
   "lanterns": {
     "count": 250,
     "minSpacing": 2,
-    "maxSpacing": 4,
+    "maxSpacing": 3,
     "minHeight": 3,
     "maxHeight": 4
   },
@@ -15,6 +15,6 @@
     "mouseSensitivity": 0.002
   },
   "tooltip": {
-    "triggerDistance": 3
+    "triggerDistance": 5
   }
 }

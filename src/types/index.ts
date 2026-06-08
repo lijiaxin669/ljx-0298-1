@@ -9,6 +9,7 @@ export interface LanternData {
   position: [number, number, number];
   blessingId: number;
   color: string;
+  colorIndex?: number;
   phase: number;
 }
 
