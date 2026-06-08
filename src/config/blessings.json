@@ -1,0 +1,24 @@
+{
+  "blessings": [
+    { "id": 1, "text": "新年快乐，万事如意！", "category": "festival" },
+    { "id": 2, "text": "阖家团圆，幸福安康！", "category": "family" },
+    { "id": 3, "text": "财源广进，步步高升！", "category": "career" },
+    { "id": 4, "text": "身体健康，长命百岁！", "category": "health" },
+    { "id": 5, "text": "学业有成，前程似锦！", "category": "study" },
+    { "id": 6, "text": "龙凤呈祥，百年好合！", "category": "wedding" },
+    { "id": 7, "text": "花开富贵，竹报平安！", "category": "festival" },
+    { "id": 8, "text": "福星高照，吉祥如意！", "category": "festival" },
+    { "id": 9, "text": "一帆风顺，年年有余！", "category": "career" },
+    { "id": 10, "text": "春风得意，前程万里！", "category": "career" },
+    { "id": 11, "text": "喜气盈门，岁且更始！", "category": "festival" },
+    { "id": 12, "text": "万事胜意，欣喜相逢！", "category": "festival" },
+    { "id": 13, "text": "岁岁常欢愉，年年皆胜意！", "category": "festival" },
+    { "id": 14, "text": "多喜乐，长安宁！", "category": "health" },
+    { "id": 15, "text": "吉祥止止，福履绥之！", "category": "festival" },
+    { "id": 16, "text": "天增岁月人增寿，春满乾坤福满门！", "category": "festival" },
+    { "id": 17, "text": "爆竹声中一岁除，春风送暖入屠苏！", "category": "festival" },
+    { "id": 18, "text": "千门万户曈曈日，总把新桃换旧符！", "category": "festival" },
+    { "id": 19, "text": "月圆人团圆，灯火映幸福！", "category": "family" },
+    { "id": 20, "text": "红红火火过大年，团团圆圆庆佳节！", "category": "festival" }
+  ]
+}
